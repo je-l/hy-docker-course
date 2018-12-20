@@ -1,0 +1,5 @@
+Build image:
+
+d build . -t curler
+
+d run -it curler
