@@ -1,0 +1,5 @@
+Build:
+d build . -t 1.6
+
+Run:
+d run -p 8000:8000 -v $(pwd)/logs.txt:/app/logs.txt 1.6
