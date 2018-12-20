@@ -1,0 +1,5 @@
+Build:
+d build . -t 1.5
+
+Run:
+d run -p 5000:5000 1.
