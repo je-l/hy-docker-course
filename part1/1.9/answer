@@ -1,0 +1,6 @@
+This is basic python / node programming environment with some tools installed.
+Base image is alpine 3.8.
+
+Z-shell is used.
+
+Dockerhub: https://hub.docker.com/r/jljljl/env
