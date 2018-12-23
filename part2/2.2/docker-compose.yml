@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend-example-docker
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      - REDIS=redis
+  redis:
+    image: redis:5.0.3-alpine
