@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  kurkku_front:
+    build: ml-kurkkumopo-frontend
+    ports:
+      - 3000:3000
+
+  kurkku_server:
+    build: ml-kurkkumopo-backend
+    ports:
+      - 5000:5000
+    volumes:
+      - ./model:/src/model
+
+  kurkku_training:
+    build: ml-kurkkumopo-training
+    volumes:
+      - ./model:/src/model
+
