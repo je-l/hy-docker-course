@@ -4,8 +4,6 @@ services:
   backend:
     build: ./backend-example-docker
     restart: always
-    ports:
-      - 8000:8000
     environment:
       - DB_USERNAME=postgres
       - DB_HOST=db
@@ -20,9 +18,14 @@ services:
   frontend:
     build: ./frontend-example-docker
     environment:
-      - API_URL=http://localhost:8000
-    ports:
-      - 5000:5000
+      - API_URL=http://localhost/api/
 
   redis:
     image: redis:5.0.3-alpine
+
+  ingress:
+    image: nginx:1.15.8-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
