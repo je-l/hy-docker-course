@@ -6,4 +6,8 @@ RUN npm i
 
 COPY . /app/
 
-CMD npm start
+RUN npm run build
+
+FROM nginx:1.15.8-alpine
+
+COPY --from=0 /app/dist/ /usr/share/nginx/html
