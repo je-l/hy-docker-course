@@ -1,0 +1,4 @@
+Postgres data is immediately visible in the volume
+
+Run redis command SAVE to flush the keys and the snapshot should be in the
+redisdata volume.
