@@ -1,0 +1,7 @@
+Image size is 158 MB
+
+Couldn't get it really smaller, looks like most of this is just the python
+binary and installed libraries. Maybe deleting unused python modules inside the
+packages could make it even smaller? Seems a bit overkill.
+
+Security improved by adding non-root user.
