@@ -1,0 +1,17 @@
+Before:
+frontend: 20.5 MB
+backend: 167 MB
+
+after:
+frontend: 20.5 MB
+backend: 994 MB
+
+Frontend size stayed the same as it uses multi-stage dockerfile. It seems like
+good way to minimize production image size for frontend projects. For
+development it's probably good to have node in the container so that
+development tools can be used.
+
+Previous backend used node-alpine image, and the new image uses default
+node:10. Size is a lot larger as the default node image has most common
+packages pre-installed. Additionally the default image is based off debian
+which makes the resulting images somewhat larger.
