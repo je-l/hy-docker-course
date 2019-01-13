@@ -1,0 +1,33 @@
+### Benefits of docker
+
+Docker is platform for application containerization, which offers benefits for
+example development and deployment of applications. Most software has
+dependencies, environment and other details which affect the runtime behavior
+in production. Docker offers simple solution for unifying developer and
+production environments, making for example dependency version differences
+easier to handle. If developer sees that the docker project has worked fine in
+their local / CI environment, they can be more certain that the same system
+will work in production. In same fashion also differences between environments
+of developers can be unified. If one person is using Linux OS and another has
+mac, the environments are still very similar.
+
+One interesting benefit of docker is that containers are sandboxed by default,
+making them useful for security purposes, e.g. running untrusted code or
+binaries. Docker is still less safe than virtual machines, as kernel bugs might
+be an attack vector.
+
+Docker can also be useful for everyday computer use, for example if user wants
+to install program in ephemeral fashion, without installing any dependencies in
+the local filesystem. Installing programs by "docker pull" and uninstalling
+them by "docker rmi"
+
+### When to use docker
+
+Docker should be used if the benefits outweight the added complexity. For
+example factors such as if there is multiple people working on a development
+project. Is the runtime for the software complex to set up, are there multiple
+pitfalls when installing the required dependencies and environment.
+
+Also other tools which are used affect how much benefit docker offers. For
+example python project which uses pipenv might not be best candidate for
+docker, as there is some overlapping functionality between pipenv and docker.
